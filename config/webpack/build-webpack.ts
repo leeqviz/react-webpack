@@ -1,8 +1,8 @@
+import { BuildOptions, WebpackConfigurationWithDevServer } from "../types";
 import { buildDevServer } from "./build-dev-server";
 import { buildLoaders } from "./build-loaders";
 import { buildPlugins } from "./build-plugins";
 import { buildResolvers } from "./build-resolvers";
-import { BuildOptions, WebpackConfigurationWithDevServer } from "./types";
 
 export function buildWebpack(
   options: BuildOptions,
@@ -31,8 +31,8 @@ export function buildWebpack(
     },
     resolve: buildResolvers(options),
     // Enable source maps in development mode for easier debugging
-    devtool: isDevelopment && "inline-source-map",
+    devtool: isDevelopment ? "inline-source-map" : "source-map",
     // Configure the development server if in development mode
-    devServer: isDevelopment && buildDevServer(options),
+    devServer: isDevelopment ? buildDevServer(options) : undefined,
   };
 }
