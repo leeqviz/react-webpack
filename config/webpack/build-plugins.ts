@@ -39,6 +39,7 @@ export function buildPlugins(options: BuildOptions): Configuration["plugins"] {
           {
             from: path.resolve(options.paths.public, "locales"),
             to: path.resolve(options.paths.output, "locales"),
+            noErrorOnMissing: true, // Don't throw an error if the locales folder is missing
           },
         ],
       }),
