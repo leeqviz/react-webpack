@@ -26,8 +26,8 @@ export function buildWebpack(options) {
         },
         resolve: buildResolvers(options),
         // Enable source maps in development mode for easier debugging
-        devtool: isDevelopment && "inline-source-map",
+        devtool: isDevelopment ? "inline-source-map" : "source-map",
         // Configure the development server if in development mode
-        devServer: isDevelopment && buildDevServer(options),
+        devServer: isDevelopment ? buildDevServer(options) : undefined,
     };
 }
