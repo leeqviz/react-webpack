@@ -1,8 +1,8 @@
-import { BuildOptions, WebpackConfigurationWithDevServer } from "../types";
 import { buildDevServer } from "./build-dev-server";
 import { buildLoaders } from "./build-loaders";
 import { buildPlugins } from "./build-plugins";
 import { buildResolvers } from "./build-resolvers";
+import { BuildOptions, WebpackConfigurationWithDevServer } from "./types";
 
 export function buildWebpack(
   options: BuildOptions,

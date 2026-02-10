@@ -6,7 +6,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
 import { Configuration, DefinePlugin, ProgressPlugin } from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-import { BuildOptions } from "../types";
+import { BuildOptions } from "./types";
 
 export function buildPlugins(options: BuildOptions): Configuration["plugins"] {
   const isDevelopment = options.mode === "development";
